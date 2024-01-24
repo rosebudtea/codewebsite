@@ -1,0 +1,53 @@
+#code-content {
+  /* background-color: rgb(61, 58, 83); */
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+
+#user-input {
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  background-color: rgb(13, 45, 71);
+}
+
+#user-input label {
+  color: chartreuse;
+}
+
+#user-input input {
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  color: chartreuse;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-panel {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+#result {
+  color: chartreuse;
+  text-align: right;
+  padding: 10px;
+  table-layout: fixed;
+  border-spacing: 10px;
+  background-color: rgb(13, 45, 71);
+  border-radius: 10px;
+}
+
+#result th {
+  background-color: rgb(14, 87, 146);
+  border-radius: 5px;
+  padding: 5px;
+}

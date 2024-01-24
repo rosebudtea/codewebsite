@@ -1,0 +1,87 @@
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+#players {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  color: chartreuse;
+  background-color: rgb(13, 45, 71);
+  border-radius: 10px;
+}
+
+#players li {
+  padding: 5px;
+  margin: 5px;
+}
+
+.player-symbol {
+  margin: 0px 10px;
+}
+
+.active-player {
+  border: 2px solid chartreuse;
+}
+
+#game-board {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(61, 58, 83);
+  padding: 20px;
+}
+
+#game-board ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#game-board button {
+  min-width: 100px;
+  min-height: 100px;
+  color: chartreuse;
+  font-size: 50px;
+}
+
+#game-over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-over h2 {
+  color: chartreuse;
+}
+
+#game-over p {
+  color: chartreuse;
+}
+
+#game-over button,
+#players button {
+  color: chartreuse;
+  background-color: slategray;
+  border: none;
+  border-radius: 5px;
+  margin: 0px 10px;
+  padding: 5px 10px;
+  opacity: 0.6;
+}
+
+#game-over button:hover,
+#players button:hover {
+  background-color: rgb(60, 76, 92);
+  opacity: 1;
+}
+
+#log {
+  color: chartreuse;
+  padding-bottom: 20px;
+}

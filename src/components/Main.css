@@ -1,0 +1,61 @@
+#main {
+  display: flex;
+  position: fixed;
+  top: 50px;
+  bottom: 40px;
+  left: 0px;
+  right: 0px;
+}
+
+#main-content {
+  overflow: scroll;
+  position: fixed;
+  top: 50px;
+  bottom: 40px;
+  left: 140px;
+  right: 0px;
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  background-color: rgb(25, 25, 25);
+}
+
+#sidebar button {
+  color: chartreuse;
+  border: none;
+  padding: 5px 0px;
+  border-radius: 8px;
+}
+
+#sidebar button:hover {
+  background-color: rgb(27, 51, 51);
+  opacity: 1;
+}
+
+#with-sidebar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 50px;
+  bottom: 40px;
+  left: 0px;
+  right: 0px;
+}
+
+#code-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.active-button {
+  background-color: rgb(27, 51, 51);
+  opacity: 1;
+}
+
+.inactive-button {
+  background-color: darkslategray;
+  opacity: 0.6;
+}

@@ -1,0 +1,20 @@
+#footer {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  height: 40px;
+}
+
+#footer p,
+#footer a {
+  color: chartreuse;
+  padding: 10px;
+}
+
+#copyright {
+  position: absolute;
+  right: 0px;
+}

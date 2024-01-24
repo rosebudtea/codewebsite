@@ -1,0 +1,62 @@
+#cartomancy {
+  color: chartreuse;
+  background-color: rgb(61, 58, 83);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#cartomancy h2 {
+  background-color: rgb(13, 45, 71);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#spread-choices button {
+  color: chartreuse;
+  background-color: slategray;
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  opacity: 0.6;
+}
+
+#spread-choices button:hover {
+  background-color: rgb(60, 76, 92);
+  opacity: 1;
+}
+
+#spread-choices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px 0px 0px;
+}
+
+#card-spread {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#card-spread .col {
+  display: flex;
+}
+
+#card-spread .all-tarot-buttons {
+  min-width: 40px;
+  min-height: 50px;
+  font-size: 10px;
+}
+
+#card-spread .spread-tarot-buttons {
+  min-width: 80px;
+  min-height: 120px;
+  font-size: 20px;
+}
