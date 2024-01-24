@@ -49,22 +49,36 @@ ol {
   font-size: 50px;
 }
 
-#game-over {
+#container {
+  background-color: black;
+  border-color: silver;
+}
+
+#game-over-modal {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-#game-over h2 {
+#game-over-modal h2 {
   color: chartreuse;
+  padding: 5px;
 }
 
-#game-over p {
-  color: chartreuse;
+#game-over-modal button {
+  padding: 5px;
+  margin: 10px 0px 0px 0px;
+  border-radius: 0px;
+  background-color: silver;
+  border-color: rgb(173, 172, 172);
 }
 
-#game-over button,
+#game-over-modal button:hover {
+  background-color: rgb(107, 107, 107);
+  border-color: rgb(173, 172, 172);
+}
+
 #players button {
   color: chartreuse;
   background-color: slategray;
@@ -75,7 +89,6 @@ ol {
   opacity: 0.6;
 }
 
-#game-over button:hover,
 #players button:hover {
   background-color: rgb(60, 76, 92);
   opacity: 1;
