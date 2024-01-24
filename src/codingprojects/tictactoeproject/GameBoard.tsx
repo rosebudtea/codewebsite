@@ -1,4 +1,4 @@
-export default function GameBoard({ gameOver, onSelectSquare, board }) {
+export default function GameBoard({ onSelectSquare, board }) {
   return (
     <ol id="game-board">
       {board.map((row, rowIndex) => (
@@ -8,7 +8,7 @@ export default function GameBoard({ gameOver, onSelectSquare, board }) {
               <li key={colIndex}>
                 <button
                   onClick={() => onSelectSquare(rowIndex, colIndex)}
-                  disabled={playerSymbol !== null || gameOver}
+                  disabled={playerSymbol !== null}
                 >
                   {playerSymbol}
                 </button>
