@@ -1,7 +1,8 @@
 import ComingSoon from "../comingsoon/ComingSoon";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import Gameboard from "./Gameboard";
+import GameOverModal from "./GameOverModal";
 
 import "./FoxAndRabbit.css";
 
@@ -28,6 +29,7 @@ let hutchPos = generateRandomCoords(6, 11, 4, 7);
 const initialFoxPos = hutchPos;
 
 export default function FoxAndRabbit() {
+  const gameOverModal = useRef<HTMLDialogElement>(null);
   const [rabbitPos, setRabbitPos] = useState(initialRabbitPos);
   const [foxPos, setFoxPos] = useState(initialFoxPos);
   const [currTurn, setCurrTurn] = useState("rabbit");
@@ -62,6 +64,9 @@ export default function FoxAndRabbit() {
   }
 
   const gameOver = checkGameOver();
+  if (gameOver) {
+    gameOverModal.current?.showModal();
+  }
 
   const descrip =
     "A small board game about a rabbit trying to get back to its burrow but finds it being guarded by a hungry fox. The rabbit must either find a way to lure the fox away from its burrow or gather enough energy to build a new one.";
@@ -84,14 +89,19 @@ export default function FoxAndRabbit() {
         descrip={descrip}
         todos={todos}
       />
+      <GameOverModal
+        ref={gameOverModal}
+        winner={gameOver}
+        onSelect={resetGame}
+      />
       <div id="fox-and-rabbit">
-        {gameOver && (
+        {/* {gameOver && (
           <div id="far-game-over">
             <h2>GAME OVER</h2>
             <p>{gameOver} Won!</p>
             <button onClick={resetGame}>Reset</button>
           </div>
-        )}
+        )} */}
         <Gameboard
           board={INITIAL_GAME_BOARD}
           onSelectSquare={movePlayer}

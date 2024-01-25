@@ -76,8 +76,6 @@ export default function TicTacToe() {
   const hasDraw = gameTurns.length === 9 && !winner;
 
   if (winner || hasDraw) {
-    console.log("Won");
-    console.log(gameOverModal.current);
     gameOverModal.current?.showModal();
   }
 
