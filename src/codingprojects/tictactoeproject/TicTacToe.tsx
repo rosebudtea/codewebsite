@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import Log from "./Log";
 import Player from "./Player";
 import GameBoard from "./GameBoard";
-import GameOver from "./GameOver";
+import GameOverModal from "./GameOverModal";
+// import GameOver from "./GameOver";
 import { WINNING_COMBINATIONS } from "./winning-combinations";
 
 import "./TicTacToe.css";
@@ -65,6 +66,7 @@ function deriveWinner(gameBoard, players) {
 }
 
 export default function TicTacToe() {
+  const gameOverModal = useRef<HTMLDialogElement>(null);
   const [players, setPlayers] = useState(PLAYERS);
   const [gameTurns, setGameTurns] = useState([]);
 
@@ -72,6 +74,10 @@ export default function TicTacToe() {
   const gameBoard = deriveGameBoard(gameTurns);
   const winner = deriveWinner(gameBoard, players);
   const hasDraw = gameTurns.length === 9 && !winner;
+
+  if (winner || hasDraw) {
+    gameOverModal.current?.showModal();
+  }
 
   function handleSelectSquare(rowIndex, colIndex) {
     setGameTurns((prevTurns) => {
@@ -100,30 +106,30 @@ export default function TicTacToe() {
   }
 
   return (
-    <div id="game-container">
-      <ol id="players" className="highlight-player">
-        <Player
-          initialName={PLAYERS.X}
-          symbol="X"
-          isActive={activePlayer === "X"}
-          onChangeName={handlePlayerNameChange}
-        />
-        <Player
-          initialName={PLAYERS.O}
-          symbol="O"
-          isActive={activePlayer === "O"}
-          onChangeName={handlePlayerNameChange}
-        />
-      </ol>
-      {(winner || hasDraw) && (
-        <GameOver winner={winner} onRestart={handleRestart} />
-      )}
-      <GameBoard
-        gameOver={winner || hasDraw}
-        onSelectSquare={handleSelectSquare}
-        board={gameBoard}
+    <>
+      <GameOverModal
+        ref={gameOverModal}
+        winner={winner}
+        onSelect={handleRestart}
       />
-      <Log turns={gameTurns} />
-    </div>
+      <div id="game-container">
+        <ol id="players" className="highlight-player">
+          <Player
+            initialName={PLAYERS.X}
+            symbol="X"
+            isActive={activePlayer === "X"}
+            onChangeName={handlePlayerNameChange}
+          />
+          <Player
+            initialName={PLAYERS.O}
+            symbol="O"
+            isActive={activePlayer === "O"}
+            onChangeName={handlePlayerNameChange}
+          />
+        </ol>
+        <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
+        <Log turns={gameTurns} />
+      </div>
+    </>
   );
 }
