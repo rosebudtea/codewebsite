@@ -79,6 +79,7 @@ export default function FoxAndRabbit() {
     "?: Add a way for the rabbit to make decoys? That the fox must investigate if in a certain range of them",
     "?: Add dig spots to get material for the decoys",
     "Fix Graphics",
+    "Refactor Code",
   ];
 
   return (
@@ -95,13 +96,6 @@ export default function FoxAndRabbit() {
         onSelect={resetGame}
       />
       <div id="fox-and-rabbit">
-        {/* {gameOver && (
-          <div id="far-game-over">
-            <h2>GAME OVER</h2>
-            <p>{gameOver} Won!</p>
-            <button onClick={resetGame}>Reset</button>
-          </div>
-        )} */}
         <Gameboard
           board={INITIAL_GAME_BOARD}
           onSelectSquare={movePlayer}
